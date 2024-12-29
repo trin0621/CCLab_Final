@@ -36,12 +36,22 @@ class ShellShockStepper {
   constructor(startX, startY) {
     this.x = startX;
     this.y = startY;
+    this.x1 = 200 * 5 / 8;
+    this.x2 = 200 * 3 / 8;
+    this.x3 = 200 * 0.43;
+    this.x4 = 200 * 0.55;
+    this.y1 = 200 * 0.57;
+    this.y2 = 200 * 0.74;
+    this.y3 = 200 * 3/4
+    this.angle = 0;
     // add properties for your dancer here:
     //..
     //..
     //..
   }
   update() {
+    this.angle = sin(frameCount * 0.1);
+    this.angle = map(this.angle, -1, 1, -PI / 10, PI / 10);
     // update properties here to achieve
     // your dancer's desired moves and behaviour
   }
@@ -54,11 +64,81 @@ class ShellShockStepper {
 
     // ******** //
     // ⬇️ draw your dancer from here ⬇️
+    push();
+  stroke(color(198,221,237));
+  strokeWeight(7);
+  translate(this.x1, this.y1);
+  rotate(this.angle);
+  line(0, -5, 25, 0);
+  push();
+  translate(25, -30);
+  rotate(this.angle);
+  line(10, 0, 0, 30);
+  pop();
+  pop();
 
+  // Left side
+  push();
+  stroke(color(237, 198, 202));
+  strokeWeight(7);
+  translate(this.x2, this.y1);
+  rotate(-this.angle);
+  line(0, -5, -25, 0);
+  push();
+  translate(-25, -30);
+  rotate(-this.angle);
+  line(-10, 0, 0, 30);
+  pop();
+  pop();
 
+  push();
+  fill(color(198, 202, 237));
+  noStroke();
+  translate(200/2, this.y2);
+  beginShape();
+  for (let i = 0; i < 35; i += 10) {
+    let v = 2 * i + i * sin(frameCount * 0.1);
+    vertex(0, -v);
 
+    // Replace the circle with an ellipse
+    if (i === 10) {
+      ellipse(0, -v, 75, 55); // First ellipse
+    } else if (i === 20) {
+      ellipse(0, -v, 65, 40); // Second ellipse
+    } else if (i === 30) {
+      ellipse(0, -v, 55, 35); // Third ellipse
+    }
+  }
+  endShape();
+  pop();
 
+  push();
+  translate(this.x3, this.y2);
+  stroke(color(237, 198, 202));
+  strokeWeight(7);
+  beginShape();
+  let lineLength = 50;
+  for (let i = 0; i <= lineLength; i += lineLength / 5) {
+    let v = 5 * sin(frameCount * 0.1 - i);
+    vertex(v, i);
+  }
+  endShape();
 
+  pop();
+
+  push();
+  translate(this.x4, this.y2);
+  stroke(color(198,221,237));
+  strokeWeight(7);
+  beginShape();
+  let lineLength1 = 50;
+  for (let i = 0; i <= lineLength; i += lineLength / 5) {
+    let v = 5 * sin(frameCount * 0.1 - i);
+    vertex(v, i);
+  }
+  endShape();
+
+  pop();
 
     // ⬆️ draw your dancer above ⬆️
     // ******** //
@@ -84,6 +164,10 @@ class ShellShockStepper {
     stroke(0);
   }
 }
+
+
+
+
 
 
 
