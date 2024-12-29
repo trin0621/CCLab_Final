@@ -118,8 +118,8 @@ img {
 }
 
 .static-div-filterheading {
-    /* margin-top: 100px;
-    margin-left: 425px; */
+    border-style: solid;
+    width: 280px;
 }
 
 .relative-div-filterdesript {
