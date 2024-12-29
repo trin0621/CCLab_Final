@@ -1,6 +1,16 @@
 body{
     font-family: "Raleway", serif;
-    background-color: lightgrey;
+    background-color: rgb(251,248,243);
+}
+
+h1{
+font-size: 30px;
+color: rgb(251,248,243);
+}
+
+h2{
+font-size: 25px;
+color: rgb(10,61,58);
 }
 
 h3{
@@ -15,16 +25,18 @@ img {
 }
 
 .fixed-div {
-    background-color: red;
+    background-color: rgb(142,31,46);
     position: fixed;
     width: 100%;
-	height: 7%;
+	height: 10%;
     top: 0px;
     right: 0PX;
 }
 
 .static-div-xmasbg {
-	background-color: lightyellow;
+    border-style: dotted;
+    border-color: rgb(10,61,58);
+    border-width: 5px;
     width: 450px;
     height: 300px;
     line-height: 30px;
@@ -81,9 +93,12 @@ img {
 }
 
 .static-div-treeheading {
-    background-color: lightyellow;
-    width: 600px;
-    height: 75px;
+    border-style: groove;
+    border-width: 5px;
+    background-color:rgb(190,42,62);
+    width: 300px;
+    height: 50px;
+    margin-top: -60px;
     /* margin-top: 125px;
     margin-left: 425px; */
 }
@@ -92,7 +107,7 @@ img {
     display:flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 100px;
+    margin-top: 125px;
     gap: 3vh;
 }
 
@@ -103,17 +118,16 @@ img {
 }
 
 .static-div-filterheading {
-    background-color: lightyellow;
-    width: 600px;
-    height: 75px;
     /* margin-top: 100px;
     margin-left: 425px; */
 }
 
 .relative-div-filterdesript {
-    background-color: lightseagreen;
+    border-style: dotted;
+    border-color: rgb(10,61,58);
+    border-width: 5px;
     width: 350px;
-    height: 300px;
+    height: 330px;
     line-height: 30px;
     /* margin-top: 50px;
     margin-left: 100px; */
